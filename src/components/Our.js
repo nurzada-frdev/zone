@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import icon from "../img/Icon.svg"
 const Our = () => {
+    const [more,setMore] = useState(false)
+
     return (
         <div className="container">
             <div>
@@ -24,34 +26,8 @@ const Our = () => {
                         <p className="p-5">Lorem ipsum dolor sit amet, consectetur <br/>
                             the adipiscing elit. Sed quis accumsan nisi <br/>
                             Ut ut felis congue nisl hendrerit commodo.</p>
-                        <button>Learn more</button>
-                    </div>
-                    <div className="flex flex-col items-center text-white text-center border-2 rounded-2xl p-10">
-                        <img className="mb-3" src={icon} alt=""/>
-                        <h2>Order Management</h2>
-                        <p className="p-5">Lorem ipsum dolor sit amet, consectetur <br/>
-                            the adipiscing elit. Sed quis accumsan nisi <br/>
-                            Ut ut felis congue nisl hendrerit commodo.</p>
-                        <button>Learn more</button>
-                    </div>
-                </div>
-                <div className="flex items-center justify-around our-1 text-white flex items-center text-center">
-                    <div className="flex flex-col items-center text-white text-center border-2 rounded-2xl p-10">
-                        <img className="mb-3" src={icon} alt=""/>
-                        <h2>Order Management</h2>
-                        <p className="p-5">Lorem ipsum dolor sit amet, consectetur <br/>
-                            the adipiscing elit. Sed quis accumsan nisi <br/>
-                            Ut ut felis congue nisl hendrerit commodo.</p>
-                        <button>Learn more</button>
-                    </div>
+                        <button onClick={()=> setMore(!more)}>Learn more</button>
 
-                    <div className="flex flex-col items-center text-white text-center border-2 rounded-2xl p-10">
-                        <img className="mb-3" src={icon} alt=""/>
-                        <h2>Order Management</h2>
-                        <p className="p-5">Lorem ipsum dolor sit amet, consectetur <br/>
-                            the adipiscing elit. Sed quis accumsan nisi <br/>
-                            Ut ut felis congue nisl hendrerit commodo.</p>
-                        <button>Learn more</button>
                     </div>
                     <div className="flex flex-col items-center text-white text-center border-2 rounded-2xl p-10">
                         <img className="mb-3" src={icon} alt=""/>
@@ -62,9 +38,44 @@ const Our = () => {
                         <button>Learn more</button>
                     </div>
                 </div>
+                {
+                    more ?
+
+                        <div className="flex justify-around">
+                            <div className="flex flex-col items-center text-white text-center border-2 rounded-2xl p-10">
+                                <img className="mb-3" src={icon} alt=""/>
+                                <h2>Order Management</h2>
+                                <p className="p-5">Lorem ipsum dolor sit amet, consectetur <br/>
+                                    the adipiscing elit. Sed quis accumsan nisi <br/>
+                                    Ut ut felis congue nisl hendrerit commodo.</p>
+                                <button>Learn more</button>
+                            </div>
+                            <div className="flex flex-col items-center text-white text-center border-2 rounded-2xl p-10">
+                                <img className="mb-3" src={icon} alt=""/>
+                                <h2>Order Management</h2>
+                                <p className="p-5">Lorem ipsum dolor sit amet, consectetur <br/>
+                                    the adipiscing elit. Sed quis accumsan nisi <br/>
+                                    Ut ut felis congue nisl hendrerit commodo.</p>
+                                <button>Learn more</button>
+                            </div>
+                            <div className="flex flex-col items-center text-white text-center border-2 rounded-2xl p-10">
+                                <img className="mb-3" src={icon} alt=""/>
+                                <h2>Order Management</h2>
+                                <p className="p-5">Lorem ipsum dolor sit amet, consectetur <br/>
+                                    the adipiscing elit. Sed quis accumsan nisi <br/>
+                                    Ut ut felis congue nisl hendrerit commodo.</p>
+                                <button>Learn more</button>
+                            </div>
+                        </div> : ''
+
+                }
             </div>
         </div>
     );
 };
 
 export default Our;
+// data-aos="fade-in" data-aos-duration="4000"
+
+
+

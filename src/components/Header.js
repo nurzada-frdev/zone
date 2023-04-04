@@ -1,21 +1,24 @@
 import React from 'react';
 import zone from "../img/zon.svg"
-const Header = () => {
+const Header = ({getDark,dark}) => {
     return (
         <div className="container">
                 <nav className="text-white bg-#0a142d border-gray-200 dark:bg-gray-900">
                     <div className="py-5 flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
-                        <a href="https://flowbite.com" className="flex items-center">
+                        <a href="" className="flex items-center">
                             <img src={zone} className="h-8 mr-3" alt=""/>
                             <span
                                 className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Zone.</span>
                         </a>
                         <div className="flex items-center md:order-2">
-                            <button
+                            <button style={{
+                                background: dark ? 'red' : '',
+                                color: dark ? 'white' : ""
+                            }} onClick={()=> getDark(dark)}
                                 className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-8 py-2 text-center">Contact
                                 Us
                             </button>
-                            <button data-collapse-toggle="mega-menu" type="button"
+                            <button  data-collapse-toggle="mega-menu" type="button"
                                     className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                                     aria-controls="mega-menu" aria-expanded="false">
                                 <span className="sr-only">Open main menu</span>
